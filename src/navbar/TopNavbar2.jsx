@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
 import { Icon } from "semantic-ui-react";
-import logo from "../images/logoab.png";
+import logo from "../images/logoabson.png";
 import {} from "./TopNavbar2.css";
 
 const TopNavbar2 = () => {
@@ -28,7 +28,7 @@ const TopNavbar2 = () => {
             <img
               src={logo}
               alt="logo"
-              style={{ height: "90px", width: "90px" }}
+              style={{ height: "90px", width: "193px" }}
             />
           </Col>
           <Col
