@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
 import { Icon } from "semantic-ui-react";
-import logo from "../images/logoabson1.png";
+import logo from "../images/logoabson.png";
 import {} from "./TopNavbar2.css";
 
 const TopNavbar2 = () => {
