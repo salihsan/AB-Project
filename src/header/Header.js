@@ -1,46 +1,86 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
-import { fade, makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
-import SearchIcon from "@material-ui/icons/Search";
-import { Link } from "react-router-dom";
-import logo from "../images/logocb.png";
-import header from "./Header.css";
+import {
+  // AppBar,
+  // Toolbar,
+  // Typography,
+  // Button,
+  makeStyles,
+  // Box,
+} from "@material-ui/core";
+// import { Link } from "react-router-dom";
+// import Logo from "../images/logo.png";
+import TopNavbar2 from "../navbar/TopNavbar2";
+// import Navbar2 from "../navbar/TopNav";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  button: {
-    color: "white",
-    fontSize: "15px",
-    fontWeight: "bold",
-  },
   title: {
     flexGrow: 1,
+    fontSize: 25,
+  },
+
+  logo: {
+    padding: 7,
+    height: 80,
+  },
+  link: {
+    color: "white",
+    textDecoration: "none",
+    "&:hover": {
+      color: "white",
+    },
   },
 }));
 
-export default function Header() {
+const Header = () => {
   const classes = useStyles();
+
   return (
-    <div>
-      <AppBar position="static">
-        <Toolbar variant="dense">
+    <div className={classes.root}>
+      {/* <Navbar2 /> */}
+      <TopNavbar2 />
+      {/* <AppBar position="static">
+        <Toolbar>
           <Link to="/">
-            <img src={logo} alt="logo" />
+            <img src={Logo} alt="logo" className={classes.logo}></img>
           </Link>
-          <Typography variant="h6" className={classes.title}></Typography>
-          <Button className={classes.button}>About Us</Button>
+          <Typography variant="h6" className={classes.title}>
+            MTD BANK
+          </Typography>
+
+          <Box flexGrow={4}>
+            <Button color="inherit">
+              <Link to="/about" className={classes.link}>
+                About US
+              </Link>
+            </Button>
+            <Button color="inherit">Product</Button>
+            <Button color="inherit">Package</Button>
+            <Button color="inherit">Contact US</Button>
+          </Box>
+          <Box marginRight="15px">
+            <Button color="inherit">Sign in</Button>
+            <Button
+              style={{
+                borderRadius: 5,
+                backgroundColor: "white",
+                padding: "5px 15px",
+                fontSize: "12px",
+                color: "blue",
+                fontWeight: 600,
+                marginLeft: 5,
+              }}
+              variant="contained"
+            >
+              Register
+            </Button>
+          </Box>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
     </div>
   );
-}
+};
+
+export default Header;

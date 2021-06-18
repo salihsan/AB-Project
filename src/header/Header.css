@@ -1,4 +1,18 @@
-.MuiAppBar-colorPrimary {
-    color: #ffb74d;
-    background-color: #768591 !important;
+.header__link {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  align-items: right;
+}
+.header__option {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.header__lineOne {
+  font-size: 13px;
+}
+.header__lineTwo {
+  font-size: 15px;
 }

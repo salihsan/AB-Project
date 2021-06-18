@@ -1,0 +1,12 @@
+.slick-next {
+  right: 30px;
+  z-index: 13;
+}
+.slick-prev {
+  left: 13px;
+  z-index: 13;
+}
+.slick-slide img {
+    display: block;
+    width: 100%;
+}
