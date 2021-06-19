@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
 import { Icon } from "semantic-ui-react";
-import logo from "../images/logoabson.png";
+import logo from "../images/logoabsonBig.png";
 import {} from "./TopNavbar2.css";
 
 const TopNavbar2 = () => {
@@ -98,13 +98,13 @@ const SecondMenu = () => {
         </Nav.Item>
         <Nav.Item className="nav-links">
           <Nav.Link eventKey="link-1">
-            <Icon name="suitcase"> </Icon>
+            <Icon name="mobile"> </Icon>
             Mobile Bank
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className="nav-links">
           <Nav.Link eventKey="link-1">
-            <Icon name="map marker alternate"> </Icon>
+            <Icon name="user alternate"> </Icon>
             Sign in
           </Nav.Link>
         </Nav.Item>

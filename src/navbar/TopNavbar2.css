@@ -31,14 +31,17 @@
 
 .nav a {
   /* padding-top: 2px; */
-  color: rgb(29, 28, 28);
+  /* color: rgb(29, 28, 28); */
+    color: #ca0505;
+    font-size: 1.5rem;
 }
+
+
 
 .nav a :hover {
-  color: black;
-  background-color: #ce2121;
+    color: black !important;
+    background-color: none !important;
 }
-
 /* .sub-menu {
   padding-left: -40px;
 } */
@@ -51,4 +54,12 @@
 
 .nav.nav-tabs .nav-link.active {
   background-color: #f7f7f7;
+}
+i.icon, i.icons { 
+    font-size: 1.2em !important;
+    color: #f00 !important;
+    display: block !important;
+    margin-bottom: 0.5rem !important;
+    text-align: left !important;
+    padding: 3px 60px 9px 27px;
 }
