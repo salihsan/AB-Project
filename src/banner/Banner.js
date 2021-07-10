@@ -1,41 +1,62 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React from "react";
 import "./Banner.css";
-import banner1 from "../images/banner1.png";
-import banner2 from "../images/banner2.png";
-import banner3 from "../images/banner3.png";
-
-export default class SimpleSlider extends Component {
-  render() {
-    const settings = {
-      dots: true,
-      lazyLoad: true,
-      infinite: true,
-      width: true,
-      speed: 300,
-      slickNext: true,
-      slickPrev: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      pauseOnFocus: true,
-      mobileFirst: true,
-      autoplay: true,
-      autoplaySpeed: 2000,
-    };
-    return (
-      <div>
-        <Slider {...settings}>
-          <div>
-            <img src={banner1} alt=" " />
-          </div>
-          <div>
-            <img src={banner2} alt=" " />
-          </div>
-          <div>
-            <img src={banner3} alt=" " />
-          </div>
-        </Slider>
-      </div>
-    );
-  }
-}
+import Banner1 from "../images/carousel/1.jpg";
+import Banner2 from "../images/carousel/2.jpg";
+import Banner3 from "../images/carousel/3.jpg";
+import Banner4 from "../images/carousel/4.jpg";
+import { Carousel } from "react-bootstrap";
+const images = [
+  {
+    image: Banner1,
+    btnLabel: "Find out more",
+    topic: "First slide label",
+    description: "Internet banking for banking transactions wherever you are",
+  },
+  {
+    image: Banner2,
+    btnLabel: "Find out more",
+    topic: "First slide label",
+    description: "To Add value for your money",
+  },
+  {
+    image: Banner3,
+    btnLabel: "Find out more",
+    topic: "First slide label",
+    description: "Summer is  new places",
+  },
+  {
+    image: Banner4,
+    btnLabel: "Find out more",
+    topic: "First slide label",
+    description: "Summer is here vacation loan to see new places",
+  },
+];
+const Banner = () => {
+  return (
+    <div>
+      <Carousel nextLabel="" prevLabel="">
+        {images.map((item) => {
+          const { image, btnLabel, description } = item;
+          return (
+            <Carousel.Item interval={20000}>
+              <img className="d-block w-100 " src={image} alt="slide" />
+              <Carousel.Caption>
+                <div className="w-50 ms-5 text-center">
+                  <div>
+                    <button className="btn btn-danger text-end">
+                      {btnLabel}
+                    </button>
+                  </div>
+                  <p className=" text-dark mt-3 carousel-desc-text ">
+                    {description}
+                  </p>
+                </div>
+              </Carousel.Caption>
+            </Carousel.Item>
+          );
+        })}
+      </Carousel>
+    </div>
+  );
+};
+export default Banner;

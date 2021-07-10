@@ -63,3 +63,9 @@ i.icon, i.icons {
     text-align: left !important;
     padding: 3px 60px 9px 27px;
 }
+.first-menu-icons i.icon,.first-menu-icons i.icons {
+  margin:0;
+  padding:0px 20px ;
+  color: rgb(97, 95, 95) !important;
+  /* background-color:blueviolet */
+}

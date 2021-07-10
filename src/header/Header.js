@@ -1,86 +1,135 @@
-import React from "react";
-import {
-  // AppBar,
-  // Toolbar,
-  // Typography,
-  // Button,
-  makeStyles,
-  // Box,
-} from "@material-ui/core";
-// import { Link } from "react-router-dom";
-// import Logo from "../images/logo.png";
-import TopNavbar2 from "../navbar/TopNavbar2";
-// import Navbar2 from "../navbar/TopNav";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  title: {
-    flexGrow: 1,
-    fontSize: 25,
-  },
-
-  logo: {
-    padding: 7,
-    height: 80,
-  },
-  link: {
-    color: "white",
-    textDecoration: "none",
-    "&:hover": {
-      color: "white",
-    },
-  },
-}));
-
+import React, { useState } from "react";
+import { Container, Nav, Navbar, Row, Col } from "react-bootstrap";
+import { Link, useHistory } from "react-router-dom";
+import "./Header.css";
+import logo from "../images/logo.png";
+import { Icon } from "semantic-ui-react";
 const Header = () => {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      {/* <Navbar2 /> */}
-      <TopNavbar2 />
-      {/* <AppBar position="static">
-        <Toolbar>
-          <Link to="/">
-            <img src={Logo} alt="logo" className={classes.logo}></img>
-          </Link>
-          <Typography variant="h6" className={classes.title}>
-            MTD BANK
-          </Typography>
-
-          <Box flexGrow={4}>
-            <Button color="inherit">
-              <Link to="/about" className={classes.link}>
-                About US
-              </Link>
-            </Button>
-            <Button color="inherit">Product</Button>
-            <Button color="inherit">Package</Button>
-            <Button color="inherit">Contact US</Button>
-          </Box>
-          <Box marginRight="15px">
-            <Button color="inherit">Sign in</Button>
-            <Button
-              style={{
-                borderRadius: 5,
-                backgroundColor: "white",
-                padding: "5px 15px",
-                fontSize: "12px",
-                color: "blue",
-                fontWeight: 600,
-                marginLeft: 5,
-              }}
-              variant="contained"
-            >
-              Register
-            </Button>
-          </Box>
-        </Toolbar>
-      </AppBar> */}
+    <div className="nav-container">
+      <Container fluid className="nav-top-fluid">
+        <Container className="nav-top ">
+          <Row>
+            <Col className="d-none d-md-block">
+              <TopNav />
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+      <Container className="nav-middle">
+        <Row>
+          <Col>
+            <Link to="/">
+              <img className="nav-logo" src={logo} alt="logo" />
+            </Link>
+          </Col>
+          <Col className="d-flex align-items-center justify-content-end">
+            <MiddleNav />
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          <Col>
+            <NavBottom />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
-
+const TopNav = () => {
+  const history = useHistory();
+  const handleNavClick = (eventKey) => {
+    history.push(`/${eventKey}`);
+  };
+  return (
+    <div>
+      <Nav
+        variant="tabs"
+        defaultActiveKey="advantage"
+        onSelect={handleNavClick}
+      >
+        <Nav.Item>
+          <Nav.Link eventKey="advantage">Advantage</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="mobile">Mobile</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="signin">Sign In</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="register">Register</Nav.Link>
+        </Nav.Item>
+      </Nav>
+    </div>
+  );
+};
+const MiddleNav = () => {
+  return (
+    <div>
+      <Nav clasName="d-flex justify-content-end">
+        <Nav.Item className="me-4">
+          <Nav.Link bsPrefix="middle-navbar">
+            <Icon
+              name="user"
+              circular
+              size="large"
+              className="d-block mb-2"
+            ></Icon>
+            Sign In
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link bsPrefix="middle-navbar">
+            <Icon
+              name="unlock alternate"
+              circular
+              size="large"
+              className="d-block mb-2 ms-2"
+            ></Icon>
+            Register
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+    </div>
+  );
+};
+const NavBottom = () => {
+  const history = useHistory();
+  const [activeKey, setActiveKey] = useState("home");
+  const handleItemClick = (eventKey) => {
+    eventKey === "home" ? history.push(`/`) : history.push(`/${eventKey}`);
+    setActiveKey(eventKey);
+  };
+  return (
+    <Navbar expand="md">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav
+          className="mr-auto"
+          activeKey={activeKey}
+          onSelect={handleItemClick}
+        >
+          <Nav.Link className="nav-bottom-links" eventKey="home">
+            Home
+          </Nav.Link>
+          <Nav.Link className="nav-bottom-links" eventKey="about">
+            About
+          </Nav.Link>
+          <Nav.Link className="nav-bottom-links" eventKey="package">
+            Package
+          </Nav.Link>
+          <Nav.Link className="nav-bottom-links" eventKey="location">
+            Location
+          </Nav.Link>
+          <Nav.Link className="nav-bottom-links" eventKey="contact">
+            Contact
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+};
 export default Header;

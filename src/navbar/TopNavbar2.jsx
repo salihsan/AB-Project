@@ -56,20 +56,22 @@ const TopNavbar2 = () => {
 const FirstMenu = () => {
   return (
     <div>
-      <Nav variant="tabs" defaultActiveKey="/" className="">
-        <Nav.Item>
-          <Nav.Link href="/" className="nav a">
-            Advantage
-          </Nav.Link>
+      <Nav variant="tabs" defaultActiveKey="/" className="first-menu-icons">
+        <Nav.Item className="d-flex flex-row">
+          <Icon name="phone"> </Icon>
+          0850 255 44 66
         </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-1">Mobile Bank</Nav.Link>
+        <Nav.Item className="d-flex flex-row">
+          <Icon name="facebook f"></Icon>
+          <Nav.Link>facebook</Nav.Link>
         </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-3">Sign in</Nav.Link>
+        <Nav.Item className="d-flex flex-row">
+          <Icon name="twitter"></Icon>
+          <Nav.Link>Twitter</Nav.Link>
         </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-4">Register</Nav.Link>
+        <Nav.Item className="d-flex flex-row">
+          <Icon name="instagram"> </Icon>
+          <Nav.Link>Instagram</Nav.Link>
         </Nav.Item>
       </Nav>
     </div>

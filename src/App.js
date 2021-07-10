@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./header/Header";
-import Footer from "./footer/Footer";
 import Home from "./home/Home";
+import Footer from "./footer/Footer";
 import About from "./about/About";
 function App() {
   return (
