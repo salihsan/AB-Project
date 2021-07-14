@@ -57,7 +57,7 @@ const Footer = () => {
       </Col>
 
       <Col sm={12} md={4} className="footer-right">
-        <img src={logo} alt="logo" style={{ height: "100px" }} />
+        <img className="logo" src={logo} alt="logo" style={{ width: "30%" }} />
 
         <p className="menu">
           <Link to="/">Home</Link> | <Link to="/about">About</Link> |
