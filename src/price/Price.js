@@ -74,24 +74,28 @@ const Price = () => {
               className="d-flex justify-content-center  rounded p-3"
             >
               <Card
-                className="card-stil "
+                className="card-stil bg-dark-sa"
                 style={{ width: "22rem", marginBottom: "25px" }}
               >
-                <Card.Title className="fw-bolder text-center">
-                  <h1>{title}</h1>
+                <Card.Title className="fw-bolder text-center ">
+                  <h1 className="fw-bolder text-center text-secondary text-title-h1">
+                    {title}
+                  </h1>
                 </Card.Title>
-                <Card.Title className="p-3 text-center">{subtitle}</Card.Title>
+                <Card.Title className="p-3  text-center text-title-h1">
+                  {subtitle}
+                </Card.Title>
                 <Card.Img src={image} className="product-image" />
-                <Card.Title className="p-3 bg-booknow">
-                  <h2 className="fw-bold text-center  ">{monthlyPrice}/mo</h2>
+                <Card.Title className="p-3 bg-monthlyPrice">
+                  <h2 className="fw-bolder text-center ">{monthlyPrice}/mo</h2>
                 </Card.Title>
-                <ListGroup className="list-group-flush">
+                <ListGroup>
                   {packages.map((Package) => {
                     return (
-                      <ListGroupItem className="py-1 card-properies-list d-flex justify-content-center">
+                      <ListGroupItem className="py-1 card-properies-list d-flex justify-content-center package-list-items">
                         <Card.Link href="#" className="product-card-link">
-                          <p className="table-parent ">
-                            <h5 className="table-child">{Package}</h5>
+                          <p className="package-list-items">
+                            <h5>{Package}</h5>
                           </p>
                         </Card.Link>
                       </ListGroupItem>
@@ -103,7 +107,9 @@ const Price = () => {
                     <p className="d-flex  justify-content-start align-items-center">
                       <Icon name="save" className="icon-card icon-save "></Icon>
                       <span className="px-1 fw-bold text-center text-dark">
-                        <h3>BOOK NOW</h3>
+                        <h3 className="text-light fw-bold text-center">
+                          BOOK NOW
+                        </h3>
                       </span>
                     </p>
                   </Card.Link>

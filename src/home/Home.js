@@ -9,10 +9,10 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <Container fluid className="card-col-bg">
+      <Container fluid>
         <Product />
       </Container>
-      <Container fluid className="card-col-bg">
+      <Container fluid>
         <Price />
       </Container>
     </div>
