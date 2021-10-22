@@ -111,7 +111,7 @@ const SecondMenu = () => {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className="nav-links">
-          <Nav.Link eventKey="link-1">
+          <Nav.Link to="/Register"  eventKey="link-1">
             <Icon name="envelope"> </Icon>
             Register
           </Nav.Link>

@@ -60,7 +60,9 @@ const TopNav = () => {
           <Nav.Link eventKey="signin">Sign In</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="register">Register</Nav.Link>
+          <Nav.Link to="/Register"  eventKey="register">
+            Register
+          </Nav.Link>
         </Nav.Item>
       </Nav>
     </div>
@@ -82,7 +84,7 @@ const MiddleNav = () => {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link bsPrefix="middle-navbar">
+          <Nav.Link to="/Register" bsPrefix="middle-navbar">
             <Icon
               name="unlock alternate"
               circular
